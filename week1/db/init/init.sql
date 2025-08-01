@@ -9,3 +9,12 @@ CREATE TABLE users (
 ) ENGINE=InnoDB;
 
 INSERT INTO users (username, password) VALUES ('admin', SHA2('adminn',256)), ('guest', SHA2('guest',256));
+
+CREATE TABLE boards (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL,
+  title CHAR(64) NOT NULL,
+  content text NOT NULL
+) ENGINE=InnoDB;
+
+INSERT INTO boards (username, title, content) VALUES ('admin', 'Notice', "Hello everyone");

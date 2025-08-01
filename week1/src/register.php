@@ -14,6 +14,8 @@
         <input type="password" name="pw" placeholder="Password">
         <input type="submit" value="Register">
     </form>
+    <h3><a href="index.php">Home </a></h3>
+
     <img src="img/13.png" width="40%" height="40%" alt="ohhae">
 
 </body>
@@ -25,10 +27,9 @@
         $password = $_POST['pw'];
         if (empty($id) || empty($password)){
              echo "<script>alert('Enter Id and Password.');</script>";
+            exit();
         }
-    }
-    echo $id;
-    echo $password;
+
     $conn = mysqli_connect(getenv("DB_HOST"), getenv("MYSQL_USER"), getenv("MYSQL_PASSWORD"), getenv("MYSQL_DATABASE"));
 
     if ($conn->connect_error) {
@@ -55,5 +56,6 @@
         echo "<script>alert('Register success!'); window.location.href = 'index.php';</script>";
         exit;
     }
+}
     //  일단 sql 연결, 아이디가 있는지 체크 비었는지 체크
 ?>
