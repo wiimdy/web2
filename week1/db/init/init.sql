@@ -17,4 +17,4 @@ CREATE TABLE boards (
   content text NOT NULL
 ) ENGINE=InnoDB;
 
-INSERT INTO boards (username, title, content) VALUES ('admin', 'Notice', "Hello everyone");
+INSERT INTO boards (username, title, content) VALUES ('admin', 'Notice', "Hello everyone!!");
