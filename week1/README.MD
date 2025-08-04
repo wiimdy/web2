@@ -39,4 +39,5 @@
 - Docker-compose 관리
 - 추가 기능
 
-![](./src/img/read.jpg)
+<!-- ![](./src/img/read.jpg) -->
+<img src="./src/img/read.jpg" alt="읽기" height="60%" width="60%">
