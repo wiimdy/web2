@@ -10,9 +10,9 @@
 </head>
 <body>
     <h1>Home Page</h1>
-     <h2><a href="login.php">Login</a></h2>
-     <h2><a href="register.php">Register</a></h2>
-     <h2> <a href='board.php'> board </a></h2>
+     <h2><a href="/login.php">Login</a></h2>
+     <h2><a href="/register.php">Register</a></h2>
+     <h2> <a href='/board/board_list.php'> board </a></h2>
     
     <?php
 
