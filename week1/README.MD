@@ -39,4 +39,4 @@
 - Docker-compose 관리
 - 추가 기능
 
-![](/src/img/read.jpg)
+![](./src/img/read.jpg)
