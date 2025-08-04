@@ -1,3 +1,8 @@
+## Build
+
+1. `docker-compose up -d`
+2. connect [localhost:8080](http://localhost:8080/)
+
 ## Feat
 
 1. Register

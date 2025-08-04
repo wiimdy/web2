@@ -25,7 +25,7 @@ session_start();
             while ($row_count)
             {    
                 $row = mysqli_fetch_assoc($result);
-                echo "id: " . $row['id'] . " user: " . $row['username'] . " title: " . $row['title'] "<a href=read.php?id=".$row['id'];
+                echo "id: " . $row['id'] . " user: " . $row['username'] . " title: " . $row['title'] . "<a href=read.php?id=".$row['id']."> see </a>";
                 $row_count = $row_count - 1;
             }
         }
