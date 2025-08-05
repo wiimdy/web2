@@ -16,11 +16,11 @@
     
     <?php
 
-    if (isset($_SESSION['id'])) {
-        echo "Hello user: ". $_SESSION['id'];
+    if (isset($_SESSION['username'])) {
+        echo "Hello user: ". $_SESSION['username'];
         echo "<h2> Only Player Menu</h2>";
         echo "<h3> <a href='logout.php'> logout </a></h3>";
-
+        echo "<h3><a href = '/board/board_write.php'>Board Write (only register user)</a> </h3>";
     }
     else {
     echo "Hello World";
