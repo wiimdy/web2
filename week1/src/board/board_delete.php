@@ -33,14 +33,14 @@ $result = mysqli_stmt_get_result($stmt);
 $row_count = mysqli_num_rows($result);
 $row = mysqli_fetch_assoc($result);
 
-if ($row['writer'] != $username) {
-    echo("<script>alert('No Delete Permission')</script>");
+if ($row_count != 1){
+    echo("<script>alert('Wrong ID')</script>");
     echo("<script>location.href='/index.php';</script>");
     exit();
 }
 
-if ($row_count != 1){
-    echo("<script>alert('Wrong ID')</script>");
+if ($row['writer'] != $username) {
+    echo("<script>alert('No Delete Permission')</script>");
     echo("<script>location.href='/index.php';</script>");
     exit();
 }
