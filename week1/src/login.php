@@ -26,18 +26,20 @@
         if ($row = mysqli_fetch_assoc($result)) {
 
             if ($row['password'] !== $hashed_password ) {
-                
                 echo("<script>alert('login fail')</script>");
+                echo("<script>location.href='/index.php';</script>");
                 exit();
             }
             else {
-                $_SESSION['id'] = $id;
+                $_SESSION['username'] = $id;
                 header('Location: index.php');
                 exit();
             }
         }
         else {
             echo("<script>alert('login fail')</script>");
+            echo("<script>location.href='/index.php';</script>");
+
             exit();
         }
     }
