@@ -10,6 +10,8 @@ session_start();
 </head>
 <body>
     <h2>Board List</h2>
+    <a href = "/board/board_write.php">Board Write (only register user)</a>
+
     <?php
         $conn = mysqli_connect(getenv("DB_HOST"), getenv("MYSQL_USER"), getenv("MYSQL_PASSWORD"), getenv("MYSQL_DATABASE"));
         if ($conn->connect_error) {
@@ -40,7 +42,7 @@ session_start();
                 <tr>
                     <th><?php echo htmlentities($row['id']); ?></th>
                     <th><?php echo htmlentities($row['title']);?></th>
-                    <th><?php echo htmlentities($row['username']);?></th>
+                    <th><?php echo htmlentities($row['writer']);?></th>
                     <th><?php echo  "<a href=board_read.php?id=".$row['id']."> see </a>";?>
                 </tr>
                 <?php $row_count  = $row_count - 1;?>
@@ -50,6 +52,8 @@ session_start();
             </h2>
         <?php else: ?>
            <p> No Board </p>
+           <a href="/index.php">HOME</a>
+           <?php exit();?>
         <?php endif; ?>
 </body>
 </html>

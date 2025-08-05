@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'):
     
     <h3>Num: <?php echo htmlentities($row['id']); ?></h3>
     <h3>Title: <?php echo htmlentities($row['title']); ?></h3>
-    <h3>Writer: <?php echo htmlentities($row['username']); ?></h3>
+    <h3>Writer: <?php echo htmlentities($row['writer']); ?></h3>
 
 
 
@@ -43,10 +43,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'):
     <p><?php echo htmlentities($row['content']); ?></p>
     <?php else: ?>
         <p>No Id</p>
+        <a href="/index.php">HOME</a>
+
+        <?php exit();?>
     <?php endif; ?>
     <?php endif; ?>
     <h2> <a href='/board/board_list.php'> Back </a></h2>
-
+    <?php
+    if (isset($_SESSION['username'])) {
+        $username = $_SESSION['username'];
+        if ($username == $row['writer']) {
+            echo  "<h2><a href=board_update.php?id=".$row['id']."> Update </a></h2>";
+            echo  "<h2><a href=board_delete.php?id=".$row['id']."> Delete </a></h2>";
+        }
+    }
+    ?>
     
 </body>
 </html>
