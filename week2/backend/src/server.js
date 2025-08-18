@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config({ path: ".env" });
 
@@ -9,6 +10,14 @@ import rateLimiter from "./middleware/rateLimiter.js";
 
 const app = express();
 const PORT = process.env.PORT || 8777;
+
+// CORS 미들웨어 설정
+app.use(
+  cors({
+    origin: "http://localhost:5173", // 프론트엔드 주소
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(rateLimiter);
