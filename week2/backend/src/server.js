@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import path from "path";
 
 dotenv.config({ path: ".env" });
 
@@ -10,6 +11,7 @@ import rateLimiter from "./middleware/rateLimiter.js";
 
 const app = express();
 const PORT = process.env.PORT || 8777;
+const __dirname = path.resolve();
 
 // CORS 미들웨어 설정
 app.use(
@@ -22,6 +24,7 @@ app.use(
 app.use(express.json());
 app.use(rateLimiter);
 app.use("/api/note", nodesRouter);
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 app.get("/", (req, res) => {
   res.status(200).send("HelW ddd ddorld");
